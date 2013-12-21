@@ -1,0 +1,60 @@
+STUFF IN REGEX (Using the 're' module)
+
+Specific formats in string
+    a{100} - 100 'a'
+    
+    [abc] - check for a, b, or c
+    
+    \d - digit format (numbers between 1 and 9)
+    \D - complement of \d
+    
+    \w - zero to 9, a to z, no other symbols
+    \W - complement of \W    
+    
+    \s - whitespace
+    
+    \b - word boundry
+
+    ^ - anchor at beginning
+    $ - anchor at the end
+
+Example of \b
+    You have the string "Chris Christmas"
+    
+    using "Chris\b" would return "Chris
+    using "Chris" would return "Chris" and "Christmas"
+
+
+re module
+    
+    re.match() always matches the things starting from the beginning only (equivalent to using ^ in search)
+    re.search() only finds the first instance of whatever you're matching anywhere in the string
+    re.findall finds all instances of the result you are looking for
+    Both methods above return match objects
+    
+Match Objects
+    Match is a class in python
+    
+    .start is finding first instance of the start
+    .end is ending first instance of the end
+    
+Groups
+    say you have
+    
+        str = "250 123 4567"
+    
+Raw string literal
+    
+    rstr = r"\n"
+    
+    the string above will not read that as a 'newline' but rather simply and literally "\n"
+    
+Compile the pattern expression, p, by
+
+    co = re.compile(p)
+    
+    Then you can use co instead of the pattern
+    
+    co.search(str) <-> re.search(p, str)
+    
+    This will save time in program execution

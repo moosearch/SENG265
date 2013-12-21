@@ -1,0 +1,46 @@
+"""Documentation strings"""
+
+def name_of_method(arg1,arg2)
+    #statements
+    return whatever
+    
+
+if __name__ == '__main__'
+"""This ensures if you're importing it you don't run it accidentally. Also, you need this to run functions, it will run main by default"""
+    print my_add(2,3)
+    #prints 5
+    
+f = open(filename, mode)
+#modes can be r, r+, w, w+, a
+#f is a file object, think of it as a file pointer
+
+f.read()
+#returns the entire file as a string
+
+f.readline()
+#returns one line as a string
+
+f.readlines()
+#returns all the lines as a list of strings
+
+for line in f:
+#Do something with line
+
+f.write(str)
+#write str to file (won't work if it's in r mode)
+
+split: string to list:
+ ″ab;cd;ef″.split( ″;″ ) # returns ["ab","cd","ef"]
+ #if you don't put any delimiters by default it will parse spaces
+
+join: list to string:
+ ″;″.join( [″ab″, ″cd", "ef″] ) #returns "ab;cd;ef"
+
+str(): converts anything to string
+
+String formating using % operator:
+ ″Today is %s the %dth″ %('February',14)
+ #returns 'Today is February the 14th'
+
+str.upper()
+ ″hello″.upper() #returns ″HELLO″

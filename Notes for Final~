@@ -1,0 +1,175 @@
+------
+REGEX
+------
+	. = match any char except '\n'
+	a* = zero or more repetitions of a
+	a+ = one or more repetitions of a
+	a? = 0 or one rep of a
+	a{5} = exactly 5 repetitions of a
+	a{3,7} = 3 to 7 reps of a
+	[abc] = any character in the set (so a, b, or c)
+	[^abc] = no characters in the set (so anything but a, b, or c)
+	\d = decimal digit char
+	\w = alphanumeric
+	\s = whitespace char
+	\b = empty string at a word boundary
+	
+	use r"[regular expression]" if you do not want to escape the 'backslash's each time
+	
+	Typical syntax:
+	
+	matchobj = re.search(r"^([-+]?[0-9]+(\.[0-9]*)?)$", input)
+	
+	re.search - gives you first instance of it
+	re.match - matches the string exactly (don't use if you're looking for a substring)
+	re.sub([word to replace],[new word],string)
+
+-------	
+Structs
+-------
+	The structure looks like the following:
+
+		typedef struct Person{
+			char *name;
+			int age;
+		}Person;
+
+	Remember this structure. To declare one, you do:
+	
+		Person joe; /*Initialise it first*/
+		joe.name = [make it point to a string, remember char *name is just a POINTER]
+		joe.age = 15
+		
+------
+Dynamic Memory in C
+------	
+    To allocate memory:
+    pointer[type] = malloc( sizeof(type) * [number of slots you want] )
+    All dynamic memory is allocated on the heap
+    the memory model goes like this
+        1) uninitialised data
+        2) initialised data
+        3) heap
+        4) stack
+        5) code
+        
+    heap grows downward while stack grows upward
+    
+------
+Makefile
+------
+
+	Here is your shell file:
+	
+		SHELL=/usr/bin/bash
+		CC=gcc
+		newlinker : newlinker.o newsets.o
+			$(CC) -o newlinker newlinker.o newsets.o
+		newlinker.o: newlinker.c newsets.h
+			$(CC) -c -g -Wall -ansi newlinker.c
+		newsets.o: newsets.c newsets.h
+			$(CC) -c -g -Wall -ansi newsets.c
+		clean:
+			-rm newlinker.exe newlinker.o newsets.o
+
+	For each target (say newlinker),
+		- You have beside them dependencies; have these been compiled already? If not, go to those first and compile them
+		- If the above has been already accomplished, compile that with the dependent files.
+		- You can set macros like (CC) as long as you specify the '$' sign and then in brackets beside it the macro symbol.
+		
+		
+------
+Profiling
+------	
+	gprof
+	- limitations include that it doesn't tell you where your program is bottlenecked by I/O or swapping bandwidth
+	
+-----
+Software Processes
+-----
+	Software engineering: the application of a systematic, disciplined, quantifiable approach to the design, development, operation, and maintanence of software (ie. application of engineering to software)
+	
+	
+	Process: A series of steps involving activities, constraints, and resources of some kind
+
+	SOFTWARE LIFECYCLE:
+	
+	1. Requirements analysis and system specification
+		- Discuss with client what they want
+		- Be sure to take the things that are relevant to you, the developer
+		- Ask questions as the client might not even know what they want
+	2. System design (i.e., architecture)
+		- How does the system plan to work?
+		- Have an idea of how the software is generally going to work
+		- What things to use
+	3. Program design (i.e., detailed / procedural)
+		- develop software interface
+		- for each function, what does what
+	4. Writing the program (i.e., coding, implementation)
+		- Self-explanatory
+	5. Testing (unit testing, integration testing, system testing, acceptance testing)
+		- See testing section for more details, but otherwise self-explanatory
+	6. System delivery (i.e., deployment)
+		- Test with client data
+		- Acceptance testing done here
+	7. Maintenance
+		- fixing problems
+		- updating software, adding functionality
+		
+
+	Waterfall model:
+	________________
+		1. Requirements analysis
+			2.System Design
+				3. Program Design
+					4. Coding
+						5. Unit & Integration Testing
+							6. System Testing
+								7. Acceptance Testing
+									8. Operation & Maintenance
+			
+		- Uses a schedule
+		- Each process produces an intermediate product
+		- They are sequentially done
+		- Views software development as a manufacturing process than a creative process
+		- long wait before a final product (can't test it until everything is complete)
+		-* we can modify this model with a prototyping element, which is a partially developed product
+			-- this shows client of what something looks like
+			
+	
+	Incremental development
+		- Instead of delivering the whole product, you deliver pieces of the product complete to the client at a time, which work. Eventually after many releases, you get the full product working in full condition
+		
+	Iterative development
+		- They deliver the whole product, but there is minimum functionality
+		- After each release, more functionality is added to the components of the software
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

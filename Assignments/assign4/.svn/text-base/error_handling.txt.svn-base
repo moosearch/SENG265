@@ -1,0 +1,24 @@
+Wesley Chow
+Seng 265
+Assignment 4
+Due April 3, 2013 at 9AM
+
+Error Handling.
+
+1. Invalid parameters in format commands will terminate the program. This includes empty parameters.
+
+	eg. ?pgwdth off
+	eg. ?mrgn zyzz
+
+2. Mispelt formatting commands will terminate the program.
+
+	eg. ?pgwthd 54
+	eg. ?___dd 34
+	
+3. If file does not exist when the program attempts to open it, the program will terminate.
+
+	eg. dfdsfvc.txt
+	-> File DNE
+	
+	eg. 4365ryhg
+	-> File DNE

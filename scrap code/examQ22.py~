@@ -1,0 +1,44 @@
+import sys
+import os
+
+def main():
+    high = 0
+    low = 0
+    average_volume = 0
+    (high,low,average_volume) = compute_hlav("GE.txt","20090311","20090313")
+    print x
+	
+def compute_hlav(filename, date1, date2):
+	
+    if os.path.isfile(filename):
+        fp = open(filename,'r')
+    else:
+        print "No such file exists"
+        exit(1)    
+	
+	strlist = fp.readlines()
+	result = (a,b,c)
+	x = 0
+	y = 0
+	c = 0
+	for i in range (0,len(strlist)):
+	    strlist[i] = split()
+	    if (strlist[i][0] == date1):
+	        if (int(strlist[i][2])>a):
+	            a = int(strlist[i][2])
+	        if (int(strlist[i][3])>b):
+	            b = int(strlist[i][3])
+	        c = c+float(strlist[i][3])
+	        
+	    if (strlist[i][0] == date2):
+	        if (int(strlist[i][2])>a):
+	            a = int(strlist[i][2])
+	        if (int(strlist[i][3])>b):
+	            b = int(strlist[i][3])
+	        c = c+float(strlist[i][3])
+	c = c/2
+	return result
+	
+if __name__ == '__main__':
+	main()
+

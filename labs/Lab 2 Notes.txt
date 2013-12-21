@@ -1,0 +1,21 @@
+Topic: Subversion.
+
+
+Repository: the server for subversion that acts like a file system.
+
+         --------------------------------------------
+         |                   |                     |
+_________|______       ______|_________      ______|________ 
+|              |       |              |      |             |        
+|              |       |              |      |             |   
+|   Revision 0 |       |  Revision 1  |      |Revision...  |
+|              |       |              |      |             |      
+----------------       ----------------      ---------------           
+
+The idea is that the repository would hold all changes that are made to the files stored in the server; you do not directly work on the files in the server but rather get a working copy on your local machine. Each revision is a "snapshot" of the repository; if you make any changes, whether it be only 1 file or multiple ones, any COMMITTED changes will update the revision number.
+
+subversion client programs use URLs
+ eg. https://svn.seng.uvic.ca/svn/seng265/wchow1/ is mine
+
+%rm -rf [filename or directory] 
+

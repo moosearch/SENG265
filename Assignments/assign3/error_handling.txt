@@ -1,0 +1,24 @@
+Wesley Chow
+V00727646
+Seng 265
+Assignment 3, Error Handling List
+
+
+The following errors are handled:
+
+===[1]===
+    For any format lines that vary like...
+
+        ?   mrgn -  5
+          ?mrgn      + 5 
+       ? mrgn+5
+   
+    They will get processed respectively
+
+        ?mrgn -5
+        ?mrgn +5
+        ?mrgn +5
+    
+    with a regex expression, found in line 107-155
+    
+===[2]===

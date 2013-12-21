@@ -1,0 +1,87 @@
+------
+------
+PYTHON
+------
+------
+    strip() - takes away characters at the start or the end of a string
+    
+    ex. string = "Your mom"
+        x = string.strip("Y")
+        print x
+        >> our mom
+        
+	split() - splits chars by delimiters specified and puts each one as elements of a list
+	
+	ex. zzz = "Your mom"
+		x = zzz.split()
+		print x
+		>> ['Your','mom']
+		
+	len() - gives length of any variable (self-explasnatory)
+	
+	
+	
+	SEQUENCE OPERATIONS (for both tuples and lists)
+	
+	say you have
+	
+	x = [1,2,3]
+	y = (4,5,6)
+	
+		you can access members of each one by using 0-based indexing:
+		y[1]
+		>> 5
+		x[2]
+		>> 3
+	
+		you can also "slice" them (get subsets of array)
+		x[:1]
+		>> [1]
+		y[1:]
+		>> (5,6)
+		
+		or even copy the whole sequence if you need a new reference:
+		z = y[:]
+		print z
+		>> (4,5,6)
+		
+		use 'in' operator to check if an item is in a container or not:
+		(you can also use this for strings too)
+		3 in x
+		>> True
+		4 in x
+		>> False
+		s = "cadet"
+		'cad' in s
+		>> True
+		
+		You can also use a '+' operator to concatentate tuples or lists with their respective types:
+		z = [7,8,9]
+		x+z
+		>> [1,2,3,7,8,9]
+		
+		You can also use a '+' operator to repeat tuples or list or strings:
+		x * 3
+		>> [1,2,3,1,2,3,1,2,3]
+		
+		
+	LIST OPERATIONS
+		say you have
+		x = [1,2,3]	
+		you can change the elements in the list and you will still have the same memory reference
+		x[1] = 24
+		print x
+		>> [1, 24, 3]
+		li.append(('a',2))
+		>> [1, 24, 3, ('a',2)]
+		li.insert(1,2) #at index 1, insert the value 2
+		>> [1, 2, 3, 'a']
+		li.extend([2,3,4]) # parameters are list only
+		>> [1,2,3,'a',2,3,4]
+		
+		
+	you can convert between tuples and lists
+		list(your_tuple)
+		tuple(your_list)
+		
+	

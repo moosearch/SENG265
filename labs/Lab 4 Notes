@@ -1,0 +1,10 @@
+say mystr2 holds "I have a book - Yeah."
+
+if strtok(mystr1,"-") was ran, then it would print out 
+	"I have a book "
+then run strtok(NULL, " ") and you get
+	"- "
+and then again strtok(NULL, " ") and you get
+	"Yeah."
+
+

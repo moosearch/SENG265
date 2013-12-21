@@ -1,0 +1,87 @@
+Cumulative Notes for SENG 265...
+
+----------------
+-PART ONE: UNIX-
+----------------
+
+Unix is an OS.
+    -machine-independent
+ 
+UNIX shell
+    - communication between user and kernel
+    - reads and interprets user commands at the console
+    - we use the BASH shell (bourne-again shell) - extension of SH (bourne shell)
+ 
+UNIX kernel
+    - core of the OS
+    - takes care of
+    (*)memory allocation
+    (*)file system
+    (*)loads/executes programs
+    (*)communication w/ devices (I/O)
+    (*)bootstraps the system
+
+UNIX Filesystem
+    - anything can be abstracted as a file (from programs, data, to memory)
+    - abstracts blocks of info on physical storage device into logical blocks that user can manipulate
+    - use forward slash to separate directory and file components
+    - root of filesystem is represented by root-directory, denoted as a single "/"
+ 
+File Attributes
+    - user name, group name, file size, creation time, mod time, file type, and permissions
+
+FILE PERMISSIONS
+    - can be set for users (u), groups (g), and others (o) [or all (a)]
+    - the user is defined as the owner of a file or directory; has full control over permissions
+    - the group is defined as a group of users can be given shared access to a file
+    - other is defined as anyone not belong to groups or users
+    - % chmod o+rx run.pl #run.pl executable and readable by other
+    - % chmod go-rwx ~/private #no access for group and other
+    - % chmod u=rwx,g=rx,o=x foobar.txt #all permissions for user, readable/executable for group, and executable for others
+    - %chmod 751 foobar.txt #same as last one
+    - the following are different ways of setting "read-only" permission for a file
+        % chmod =r file
+        % chmod 444 file
+        % chmod a-wx,a+r file
+
+BASIC COMMAND SYNTAX
+    - % cmd [options] [arguments]
+    - two types of options: opt and optname
+    - opt is a character in {a, ..,z, A, .., Z, 0, .., 9} while option is a word
+    - argument/arg can be a filename, directory name, device name, number, or a string
+
+Stream redirection
+    - 0 stdin
+    - 1 stdout
+    - 2 stderr
+    - can redirect input by using '<'
+    - can redirect by using '<' for changing input
+    -% sort < kylechat.txt will output whatever is in the text file to the console
+    -% echo $SHELL > a.txt will change the output stream from console to the text file
+    -pipes, the standard output of one command is fed into the standard input of another. 
+    -ex. % ls -l | less
+    
+SUBVERSION
+    - subversion (svn) is a open source version control system
+    - manage files and directories in a repository (central storage of data), stored in a manner that resembles a filesystem tree
+    - repository remembers every committed change to every controlled file (includes deletions too)
+    - Copy-modify-merge allows users to work in parallel
+     (i) User 1 and User 2 checkout a file B from the repository
+     (ii) Both users modify their files, call them B' and B'' for user 1 and user 2 respectively.
+     (iii) user 1 commits his changes first
+     (iv) user 2 tries to commit his change but fails to as you get an out of date error
+     (v) user 2 gets a copy of the newly updated one (B'), and merges the changes of B' and B'' (his own copy) to make B*. He commits his changes after.
+     (vi) User 1 now updates his B' to ensure everything is going well.
+    - % svn update updates your working copy
+    - % svn checkout gives you a local copy from a repository
+    
+C PROGRAMMING LANGUAGE (Need to complete this)
+    - % gcc -ansi -Wall -c hello.c creates an object file
+    - % comments are done between these things: /* */
+    - no booleans in C, use 0 for false and a non-zero value for true
+    - char *s = "a string\n" is a variable holding an address to a "static string table"
+    - A variable with...
+    (*)Program scope: it lasts for the program's lifetime and can be accessed from any file comprising the program
+    (*)File scope: visible from its point of declaration to the end of the source file. to give a variable this, define out outside a function with the "static" keyword
+    (*)Function scope: variable exists from beginning to end of a function
+    (*)Block scope: variable only exists from beginning of block to end of the block

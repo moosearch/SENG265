@@ -1,0 +1,66 @@
+ctrl + D - end of file ender
+ctrl + C stops current command executing
+ctrl + S halts output to scrn
+
+--
+
+#ifdef LABEL
+	/*Regular C statements*/
+#endif
+
+--
+
+The code segment above lets you conditionally omit code if the label exists at the top of the program (doesn't neccessarily need a value assigned to the macro).
+
+
+In Python, you must convert tabs to spaces!
+
+For making makefiles, you must have tabs, not spaces (make sure your tabs are not converted).
+
+
+Dynamic memory.
+
+Basically...
+
+double *f = (double *) malloc (sizeof(double));
+if(f == NULL){
+	/*throw an exception*/
+}
+
+You have to cast your malloc to the appropriate data type. It returns a POINTER to that type.
+
+Remember to
+
+free(f)
+
+when you're done with the variable
+
+
+When you do not know the input size of a string perhaps, use the getline function:
+
+char * line;
+FILE * fp;
+int len;
+getline(line, &len, fp);
+
+getline() will dynamically allocate memory for line (so remember to free it when you're done with it!). Do note that this is not exactly ansi compliant, so you have to use #define _GNU_SOURCE so the compiler doesn't moan and complain about it
+
+
+
+GDB debugger - Useful tool to debug your programs. Here are some commands and a small guide.
+
+1. Compile your program with the -g tag.
+2. With the executable name, type gdb [executable]. You cannot do this if your code did not compile properly.
+3. You are now in GDB, now you can use the following commands to do whatever the hell you need:
+
+	% run - runs the program
+	% list [function]
+	% break [function] or [line-number] - this is a breakpoint
+	% print [variable-name] - tells you value of variable; you can also dereference/reference variables.
+	% next - runs to end of current method
+	% cont - proceeds with program until it hits breakpoint.
+	% where - tells where you are in the program
+	% step - steps into code 1 line at a tme
+	% display [variable-name] - same thing as print, but each time you run your program w/ %step or %run, it will display it for you (so you don't have to print multiple times)
+	% undisplay [number] - Undos display; each variable will have an associated number with it and you can disable it like that
+

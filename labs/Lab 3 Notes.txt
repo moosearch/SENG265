@@ -1,0 +1,4 @@
+Made sample C program in class.
+
+array syntax
+	<data type> <variable name>[size of array]

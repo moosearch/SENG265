@@ -1,0 +1,47 @@
+SENG 265
+LAB 10 NOTES
+
+mystruct * mrArr = (cast) malloc(100*sizeof(struct))
+
+Arrays vs Linked Lists in the heap.
+
+Arrays are consequential in the heap and are grouped together.
+Linked lists could be anywhere in the heap as it's not an array. Each element in the linked list has an attribute that points to another element in the linked list.
+
+
+Array
+ _______
+|	|
+|arr[0]	|
+|arr[1]	|
+|...	|
+|	|
+|arr[n]	|
+|	|
+|	|
+|	|
+|	|
+|	|
+|	|
+|	|
+--------
+
+Linked list
+
+ _______
+|	|
+|ele[0]	|
+|ele[5]	|
+|ele[1]	|
+|	|
+|	|
+|	|
+|	|
+|ele[4]	|
+|	|
+|ele[3]	|
+|ele[2]	|
+|	|
+--------
+
+

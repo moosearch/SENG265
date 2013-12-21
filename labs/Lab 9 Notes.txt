@@ -1,0 +1,11 @@
+SENG 265
+Lab 9 Notes
+March 15, 2013
+
+The idea behind dynamic allocation is that we want to be able to allocate memory on a needed basis as opposed to assigning an arbitrarily large amount of memory that may or may not ever be used.
+
+Stacks store the local variables and such that are initialised at runtime
+
+Dynamic memory allocation occurs in the heaps, which then can be used by programs. The program can free the memory allocated in the heap if it does not need it.
+
+

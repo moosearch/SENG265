@@ -1,0 +1,12 @@
+#!/usr/bin/python
+ -the directory for the interpreter we use
+ 
+chmod u+x script.py
+ -change permissions for users to be able to execute
+ 
+./script.py OR python script.py
+ -1 is running script if given user permission for execution
+ -2 is running script if user isnt given permission to execute
+
+
+

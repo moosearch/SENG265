@@ -1,0 +1,30 @@
+SENG 265 LAB 1 NOTES
+
+%pwd - prints name of current/working directory
+%ls - lists directory contents
+%cd [directory name you want to go to] - changes current directory to whatever path you entered
+%mkdir [name of directory] - makes new directory
+%cat [filename1 filename2 filename3 ...] - outputs files to terminal. if your directory has spaces in it, be sure to use quotation marks.
+%rm [filename] - deletes whatever you specified in your current directory
+%man [command name] - lists the arguments and stuff for the specified command
+  - if you want to leave the manual, press "q" to go back to the terminal
+
+
+Vim - Command line editor: similar to text editor
+● vi yourfile.txt
+● i - enter Insert mode
+● ESC to return to normal mode
+● :wq - save and quit
+● dd - Delete current line
+● v visual mode
+● x cut
+● y copy
+● p – paste
+● :q! - quit the file without saving
+
+%ssh [user@]host
+ - example: %ssh wchow1@142.104.91.85
+
+%ifconfig displays network information
+
+%chmod u+rwx
